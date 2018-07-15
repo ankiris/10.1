@@ -9,11 +9,19 @@ var flkty = new Flickity( '.carousel', {
   hash: true,
 });
 
-var flkty1 = new Flickity('.carousel');
+var flkty = new Flickity('.carousel');
 
 var progressBar = document.querySelector('.progress-bar')
 
-flkty1.on( 'scroll', function( progress ) {
+flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
+});
+
+ var button = document.getElementById('#restart')
+
+ button.addEventListener( 'click', function( event ) {
+ 
+  var beginning = document.getElementById('#carrousel-cell1');
+  flkty.selectedElement(beginning);
 });
