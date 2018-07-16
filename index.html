@@ -4,14 +4,11 @@
     <meta charset='UTF-8'>
     <title>Flickity</title>
     <link rel='stylesheet' type='text/css' href='vendor/normalize.css'>
-    <link rel='stylesheet' type='text/css' href='vendor/flickity.min.css'>
+    <link rel='stylesheet' href='vendor/flickity.min.css' media="screen">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
   </head>
   <body>
-    <div class="button-group"></div>
-      <button class="button" id="restart">Restart</button>
-    </div>
-    <div class="main-carousel" data-flickity='{ "hash": true }'>
+     <div class="main-carousel" data-flickity='{ "hash": true }'>
       <div class="carousel-cell" id="carousel-cell1" style="background-image:url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
         <div class="container">Miasto1</div>
       </div>
@@ -27,6 +24,9 @@
       <div class="carousel-cell" id="carousel-cell5" style="background-image:url(https://images.pexels.com/photos/161893/seattle-washington-city-cities-161893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
         <div class="container">Miasto5</div>
       </div>
+    </div>
+    <div class="button-group"></div>
+      <button class="button" id="restart">Restart</button>
     </div>
     <div class="progress-bar"></div>
     <script src='vendor/flickity.pkgd.min.js'></script> 
