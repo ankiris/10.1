@@ -1,7 +1,7 @@
 'use strict';
 (function(){ 
 
-	var templateList = document.getElementById('template-product-list').innerHTML;
+	var templateList = document.getElementById('template-carousel').innerHTML;
 	var templateItem = document.getElementById('template-carousel-cell').innerHTML;
 	
 	// Optymalizacja 	
