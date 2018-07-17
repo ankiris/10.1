@@ -8,29 +8,59 @@
     <link rel='stylesheet' type='text/css' href='css/style.css'>
   </head>
   <body>
-     <div class="main-carousel" data-flickity='{ "hash": true }'>
-      <div class="carousel-cell" id="carousel-cell1" style="background-image:url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto1</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell2" style="background-image:url(https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto2</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell3" style="background-image:url(https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto3</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell4" style="background-image:url(https://images.pexels.com/photos/97906/pexels-photo-97906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto4</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell5" style="background-image:url(https://images.pexels.com/photos/161893/seattle-washington-city-cities-161893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto5</div>
-      </div>
+     <div class="main-carousel" id='results' data-flickity='{ "hash": true }'>
     </div>
     <div class="button-group">
       <button class="button" id="restart">Restart</button>
     </div>
     <div class="progress-bar"></div>
+
+  
+    <script id="template-product-list" type="x-tmpl-mustache">
+        {{{products}}}
+    </script>
+  
+
+    <script id="template-carousel-cell" type="x-tmpl-mustache">
+      <div class="carousel-cell" style="background-image:url({{ image }})">
+        <h1>{{title}}</h1>
+        <div class="container">{{description}}</div>
+      </div>
+    </script>
+
+    <script>
+      var productsData = [
+        {
+          image: 'https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'City 1', 
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'City 2', 
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'City 3', 
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/97906/pexels-photo-97906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'City 4', 
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/161893/seattle-washington-city-cities-161893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'City 5', 
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        }
+      ];
+      </script>
+
     <script src='vendor/flickity.pkgd.min.js'></script> 
     <script src='vendor/hash.js'></script> 
+    <script src='vendor/mustache.min.js'></script>
     <script src='js/script.js'></script>
   </body>
 </html>
