@@ -13,9 +13,9 @@
 	var listItems = '';
 	
 
-	for(var i = 0; i < productsData.length; i++){
-		console.log(productsData);
-		listItems += Mustache.render(templateItem, productsData[i]);
+	for(var i = 0; i < slidesData.length; i++){
+		console.log(slidesData);
+		listItems += Mustache.render(templateItem, slidesData[i]);
 	}
 	
 	var fullProductList = Mustache.render(templateList, {products: listItems});
@@ -23,6 +23,7 @@
 	results.insertAdjacentHTML('beforeend', fullProductList);
 		
 })(); 
+
 
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
@@ -56,3 +57,21 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
+
+(function(){ 
+  	window.initMap = function() {
+		
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 7,
+			center: slidesData[0].coords
+		});
+		
+		for (var i = 0; i < slidesData.length; i++ ){
+      var marker = new google.maps.Marker({
+      position: slidesData[i].coords,
+      map: map
+      });
+    }
+  };
+		
+})();  
