@@ -67,14 +67,15 @@ flkty.on( 'scroll', function( progress ) {
 			center: slidesData[0].coords
 		});
 		
-		for (var i = 0; i < slidesData.length; i++ ){
+		for (let i = 0; i < slidesData.length; i++ ){
       var marker = new google.maps.Marker({
       position: slidesData[i].coords,
       map: map
       });
       marker.addListener('click', function(){
-        flkty.select(i);
-      })
+        flkty.selectCell(i);
+        console.log(i)
+      });
 
       flkty.on( 'change', function( index ) {
         map.panTo(slidesData[index].coords)
