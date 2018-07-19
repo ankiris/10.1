@@ -12,7 +12,6 @@
             background: rgba(0, 0, 0, 0.3);
             width: 50vw;
             max-width: 1200px;
-            height: 100px;
             top: 50%;
             left: 50%;
             transform: translateY(-50%) translateX(-50%);
@@ -43,3 +42,8 @@
     width: 0;
     background: #333;
     }
+
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }

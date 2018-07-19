@@ -8,29 +8,69 @@
     <link rel='stylesheet' type='text/css' href='css/style.css'>
   </head>
   <body>
-     <div class="main-carousel">
-      <div class="carousel-cell" id="carousel-cell1" style="background-image:url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto1</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell2" style="background-image:url(https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260https://images.pexels.com/photos/830891/pexels-photo-830891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto2</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell3" style="background-image:url(https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto3</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell4" style="background-image:url(https://images.pexels.com/photos/97906/pexels-photo-97906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto4</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell5" style="background-image:url(https://images.pexels.com/photos/161893/seattle-washington-city-cities-161893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-        <div class="container">Miasto5</div>
-      </div>
+    <div class="main-carousel" id='results'>
     </div>
     <div class="button-group">
       <button class="button" id="restart">Restart</button>
     </div>
     <div class="progress-bar"></div>
+    <div>
+      <div id="map"></div>
+    </div>
+
+  
+    <script id="template-carousel" type="x-tmpl-mustache">
+        {{{products}}}
+    </script>
+  
+
+    <script id="template-carousel-cell" type="x-tmpl-mustache">
+      <div class="carousel-cell" style="background-image:url({{ image }})">
+        <h1>{{title}}</h1>
+        <div class="container">{{{description}}}</div>
+      </div>
+    </script>
+
+    <script>
+      var slidesData = [
+        {
+          image: 'https://images.pexels.com/photos/534757/pexels-photo-534757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'New York', 
+          coords: {lat: 40.712, lng: -74.005},
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x100" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/14621/Warsaw-at-night-free-license-CC0.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'Warszawa', 
+          coords: {lat: 52.2296756, lng: 21.0122287},
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x100" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/7041/pexels-photo.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'London', 
+          coords: {lat: 51.5073509, lng: -0.127758},
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x100" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/161376/firenze-florence-italy-europe-161376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'Florence', 
+          coords: {lat: 43.7695604, lng: 11.2558136},
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x100" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        },
+        {
+          image: 'https://images.pexels.com/photos/161893/seattle-washington-city-cities-161893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          title: 'Seattle', 
+          coords: {lat: 47.6062095, lng: -122.3320708},
+          description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/100x100" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        }
+      ];
+      </script>
+
     <script src='vendor/flickity.pkgd.min.js'></script> 
     <script src='vendor/hash.js'></script> 
+    <script src='vendor/mustache.min.js'></script>
     <script src='js/script.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVc8JEZxVuiA2UNocofKiShJcBwK5nNjI&callback=initMap">
+    </script>
   </body>
 </html>
